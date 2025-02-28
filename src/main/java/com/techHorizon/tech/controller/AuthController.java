@@ -34,7 +34,7 @@ public class AuthController {
     public ResponseEntity<String> loginUser(@RequestBody User user) {
         Optional<User> foundUser = authService.loginUser(user.getEmail(), user.getPassword());
         if (foundUser.isPresent()) {
-            return ResponseEntity.ok("Inicio de sesión exitoso para: " + foundUser.get().getEmail());
+            return ResponseEntity.ok().build();
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales incorrectas");
         }
