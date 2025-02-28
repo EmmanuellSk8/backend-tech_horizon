@@ -13,7 +13,9 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://tech-horizon02.netlify.app") // Cambia esto por la URL de tu frontend en producción
+                        .allowedOrigins("https://tech-horizon02.netlify.app",
+                                        "http://localhost:4200"
+                                ) // Cambia esto por la URL de tu frontend en producción
                         .allowedMethods("GET", "POST")
                         .allowedHeaders("*")
                         .allowCredentials(true);
